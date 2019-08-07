@@ -23,7 +23,7 @@ def main():
             iterator = "%06d" % (i)
             blank_image = np.zeros((400, 200), np.uint8)
             try:
-                filepath = '../../data_velodyne/converted_pointclouds/' + prefix + '_' + iterator + '.bag'
+                filepath = '../../data_velodyne/testing_converted_pcl/' + prefix + '_' + iterator + '.bag'
                 with open(filepath) as fp:
                     line = fp.readline()
                     cnt = 1
@@ -40,8 +40,8 @@ def main():
                         line = fp.readline()
                         cnt += 1
 
-                cv2.imwrite('../../label_data_transformed/features/' + prefix + '_' + iterator + '.png', blank_image)
-                inverse_perspective_mapping(prefix, iterator)
+                cv2.imwrite('../../label_data_transformed/testing/' + prefix + '_' + iterator + '.png', blank_image)
+                #inverse_perspective_mapping(prefix, iterator)
             except:
                 pass
 

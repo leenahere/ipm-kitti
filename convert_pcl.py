@@ -7,10 +7,10 @@ import argparse
 def main():
     prefix_list = ['um', 'umm', 'uu']
     for prefix in prefix_list:
-        for i in range(97, 98):
+        for i in range(0, 98):
             iterator = "%06d" % (i)
             try:
-                cmd = '../cmake-build-debug/bin/kitti2pcd --infile ../../data_velodyne/training/velodyne/' + prefix + '_' + iterator + '.bin --outfile ../../data_velodyne/converted_pointclouds/' + prefix + '_' + iterator + '.bag'
+                cmd = '../cmake-build-debug/bin/kitti2pcd --infile ../../data_velodyne/testing/velodyne/' + prefix + '_' + iterator + '.bin --outfile ../../data_velodyne/testing_converted_pcl/' + prefix + '_' + iterator + '.bag'
                 os.system(cmd)
             except:
                 pass
